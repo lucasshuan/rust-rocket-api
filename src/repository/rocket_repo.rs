@@ -1,7 +1,7 @@
 use crate::model::Rocket;
 use mongodb::{
-    bson::{doc, extjson::de::Error},
-    results::InsertOneResult,
+    bson::{doc, extjson::de::Error, oid::ObjectId},
+    results::{DeleteResult, InsertOneResult, UpdateResult},
     sync::Collection,
 };
 
@@ -15,10 +15,12 @@ impl RocketRepo {
         RocketRepo { col }
     }
 
-    pub fn find_by_id(&self, id: String) -> Result<Rocket, Error> {
+    pub fn find_by_id(&self, id: &String) -> Result<Rocket, Error> {
+        let obj_id = ObjectId::parse_str(id).unwrap();
+        let filter = doc! {"_id": obj_id};
         let rocket = self
             .col
-            .find_one(Some(doc! {"id": id}), None)
+            .find_one(filter, None)
             .ok()
             .expect("Error finding rocket");
         Ok(rocket.unwrap())
@@ -29,9 +31,9 @@ impl RocketRepo {
             .col
             .find(None, None)
             .ok()
-            .expect("Error finding rockets");
-        let persons = cursors.map(|doc| doc.unwrap()).collect();
-        Ok(persons)
+            .expect("Error getting list of persons");
+        let rockets = cursors.map(|doc| doc.unwrap()).collect();
+        Ok(rockets)
     }
 
     pub fn create(&self, new_rocket: Rocket) -> Result<InsertOneResult, Error> {
@@ -45,5 +47,33 @@ impl RocketRepo {
             .ok()
             .expect("Error creating rocket");
         Ok(person)
+    }
+
+    pub fn update(&self, id: &String, new_rocket: Rocket) -> Result<UpdateResult, Error> {
+        let obj_id = ObjectId::parse_str(id).unwrap();
+        let filter = doc! {"_id": obj_id};
+        let new_doc = doc! {
+            "$set":	{
+                "id": new_rocket.id,
+                "name": new_rocket.name,
+            },
+        };
+        let rocket = self
+            .col
+            .update_one(filter, new_doc, None)
+            .ok()
+            .expect("Error updating rocket");
+        Ok(rocket)
+    }
+
+    pub fn delete(&self, id: &String) -> Result<DeleteResult, Error> {
+        let obj_id = ObjectId::parse_str(id).unwrap();
+        let filter = doc! {"_id": obj_id};
+        let result = self
+            .col
+            .delete_one(filter, None)
+            .ok()
+            .expect("Error deleting rocket");
+        Ok(result)
     }
 }

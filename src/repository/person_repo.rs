@@ -1,7 +1,7 @@
 use crate::model::Person;
 use mongodb::{
     bson::{doc, extjson::de::Error, oid::ObjectId},
-    results::InsertOneResult,
+    results::{DeleteResult, InsertOneResult, UpdateResult},
     sync::Collection,
 };
 
@@ -15,7 +15,7 @@ impl PersonRepo {
         PersonRepo { col }
     }
 
-    pub fn find_by_id(&self, id: String) -> Result<Person, Error> {
+    pub fn find_by_id(&self, id: &String) -> Result<Person, Error> {
         let obj_id = ObjectId::parse_str(id).unwrap();
         let filter = doc! {"_id": obj_id};
         let person = self
@@ -26,7 +26,7 @@ impl PersonRepo {
         Ok(person.unwrap())
     }
 
-    pub fn find_in_rocket(&self, rocket_id: String) -> Result<Vec<Person>, Error> {
+    pub fn find_in_rocket(&self, rocket_id: &String) -> Result<Vec<Person>, Error> {
         let obj_id = ObjectId::parse_str(rocket_id).unwrap();
         let filter = doc! {"rocket_id": obj_id};
         let cursors = self
@@ -62,5 +62,35 @@ impl PersonRepo {
             .ok()
             .expect("Error creating person");
         Ok(person)
+    }
+
+    pub fn update(&self, id: &String, new_person: Person) -> Result<UpdateResult, Error> {
+        let obj_id = ObjectId::parse_str(id).unwrap();
+        let filter = doc! {"_id": obj_id};
+        let new_doc = doc! {
+            "$set":	{
+                "id": new_person.id,
+                "age": new_person.age,
+                "name": new_person.name,
+                "job": new_person.job,
+            },
+        };
+        let person = self
+            .col
+            .update_one(filter, new_doc, None)
+            .ok()
+            .expect("Error updating person");
+        Ok(person)
+    }
+
+    pub fn delete(&self, id: &String) -> Result<DeleteResult, Error> {
+        let obj_id = ObjectId::parse_str(id).unwrap();
+        let filter = doc! {"_id": obj_id};
+        let result = self
+            .col
+            .delete_one(filter, None)
+            .ok()
+            .expect("Error deleting person");
+        Ok(result)
     }
 }
