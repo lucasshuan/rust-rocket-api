@@ -12,7 +12,7 @@
 
 ## 📄 About <a name = "about"></a>
 
-A Rust backend project, harnessing the power of Rocket and MongoDB, featuring two streamlined collections, 'Rocket' and 'Person,' for the development of a high-performance API.
+A Rust backend project, harnessing the power of Rocket and MongoDB, featuring two streamlined collections, 'Rocket' and 'Person', for the development of a high-performance API.
 
 ## 💻 Technologies <a name="technologies"></a>
 
