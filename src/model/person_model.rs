@@ -8,5 +8,5 @@ pub struct Person {
     pub name: String,
     pub age: i32,
     pub job: String,
-    pub rocket_id: ObjectId,
+    pub rocket_id: Option<ObjectId>,
 }
