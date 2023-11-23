@@ -1,0 +1,23 @@
+_id: req_785aff685ec64977bafa000930a30cef
+type: Request
+parentId: fld_87e29818cd9740a79db689a2ccd5f684
+modified: 1700781350265
+created: 1700781304902
+url: "{{ _.apiUrl }}/rocket/id"
+name: Update Rocket
+description: ""
+method: PUT
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1700768355832
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

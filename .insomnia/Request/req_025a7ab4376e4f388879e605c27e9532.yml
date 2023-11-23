@@ -1,0 +1,23 @@
+_id: req_025a7ab4376e4f388879e605c27e9532
+type: Request
+parentId: fld_87e29818cd9740a79db689a2ccd5f684
+modified: 1700781351903
+created: 1700781306681
+url: "{{ _.apiUrl }}/rocket/id"
+name: Delete Rocket
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1700768355732
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

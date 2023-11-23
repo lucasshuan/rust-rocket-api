@@ -1,0 +1,23 @@
+_id: req_a8a92e9539d44f8b84b3461fbba44e5c
+type: Request
+parentId: fld_87e29818cd9740a79db689a2ccd5f684
+modified: 1700781396991
+created: 1700779799480
+url: "{{ _.apiUrl }}/rocket/id/persons"
+name: Get Rocket Persons
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1700779799480
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
