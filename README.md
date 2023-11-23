@@ -43,8 +43,6 @@ A Rust backend project, harnessing the power of Rocket and MongoDB, featuring tw
     cargo build
     ```
 
-### Running
-
 3. **Start the rust server:**
 
     ```bash
