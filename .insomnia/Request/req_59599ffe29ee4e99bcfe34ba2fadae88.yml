@@ -1,0 +1,23 @@
+_id: req_59599ffe29ee4e99bcfe34ba2fadae88
+type: Request
+parentId: fld_87e29818cd9740a79db689a2ccd5f684
+modified: 1700781371705
+created: 1700773694202
+url: "{{ _.apiUrl }}/rocket"
+name: Create Rocket
+description: ""
+method: POST
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1700768355932
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

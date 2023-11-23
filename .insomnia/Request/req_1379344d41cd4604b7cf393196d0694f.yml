@@ -1,0 +1,23 @@
+_id: req_1379344d41cd4604b7cf393196d0694f
+type: Request
+parentId: fld_87e29818cd9740a79db689a2ccd5f684
+modified: 1700781403936
+created: 1700773694198
+url: "{{ _.apiUrl }}/rocket/655fbfd3fd855bb40d6b309e"
+name: Get Rocket
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1700773650887
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

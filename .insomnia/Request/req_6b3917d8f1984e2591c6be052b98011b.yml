@@ -1,0 +1,32 @@
+_id: req_6b3917d8f1984e2591c6be052b98011b
+type: Request
+parentId: fld_1d4ab0db5fc445989c0673f28bec7c18
+modified: 1700774145853
+created: 1700773667374
+url: "{{ _.apiUrl }}/person"
+name: Create Person
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Benjamin",
+    	"age": 24,
+    	"job": "Data Scientist"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1700768355932
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

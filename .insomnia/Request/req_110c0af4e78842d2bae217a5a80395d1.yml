@@ -1,0 +1,23 @@
+_id: req_110c0af4e78842d2bae217a5a80395d1
+type: Request
+parentId: fld_1d4ab0db5fc445989c0673f28bec7c18
+modified: 1700768392710
+created: 1700768342766
+url: "{{ _.apiUrl }}/person"
+name: Get Persons
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1700768356032
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

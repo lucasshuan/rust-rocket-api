@@ -1,0 +1,23 @@
+_id: req_fbc961b351e843858f9f45e6bd6b3552
+type: Request
+parentId: fld_1d4ab0db5fc445989c0673f28bec7c18
+modified: 1700781342899
+created: 1700781277678
+url: "{{ _.apiUrl }}/person/id"
+name: Update Person
+description: ""
+method: PUT
+body: {}
+parameters: []
+headers:
+  - name: User-Agent
+    value: Insomnia/2023.5.7
+authentication: {}
+metaSortKey: -1700768355882
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
