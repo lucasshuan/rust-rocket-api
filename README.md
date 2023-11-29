@@ -37,13 +37,7 @@ A Rust backend project, harnessing the power of Rocket and MongoDB, featuring tw
     cd rust-rocket-api
     ```
 
-2. **Install dependencies:**
-
-    ```bash
-    cargo build
-    ```
-
-3. **Start the rust server:**
+2. **Start the rust server:**
 
     ```bash
     cargo run
